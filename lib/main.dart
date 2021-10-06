@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:kzn/providers/course_provider.dart';
+import 'package:kzn/providers/subscription_provider.dart';
 import 'package:kzn/providers/user_provider.dart';
+import 'package:kzn/ui/routes/about_route.dart';
+import 'package:kzn/ui/routes/course_route.dart';
+import 'package:kzn/ui/routes/login_route.dart';
 import 'package:kzn/ui/routes/main_route.dart';
+import 'package:kzn/ui/routes/privacy-policy.dart';
+import 'package:kzn/ui/routes/subscription_check_route.dart';
+import 'package:kzn/ui/routes/subscription_route.dart';
+import 'package:kzn/ui/routes/tnc_route.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -9,6 +18,8 @@ void main() {
       MultiProvider(
           providers: [
             ChangeNotifierProvider(create: (_) => UserProvider()),
+            ChangeNotifierProvider(create: (_) => CourseProvider()),
+            ChangeNotifierProvider(create: (_) => SubscriptionProvider()),
           ],
           child: MyApp()
       )
@@ -34,9 +45,16 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       //home: MyHomePage(title: 'Flutter Demo Home Page'),
-      initialRoute: MainRoute.routeName,
+      initialRoute: LoginRoute.routeName,
       routes: {
         MainRoute.routeName: (context) => MainRoute(),
+        LoginRoute.routeName: (context) => LoginRoute(),
+        SubscriptionRoute.routeName: (context) => SubscriptionRoute(),
+        CourseRoute.routeName: (context) => CourseRoute(),
+        AboutRoute.routeName: (context) => AboutRoute(),
+        TnCRoute.routeName: (context) => TnCRoute(),
+        PrivacyPolicyRoute.routeName: (context) => PrivacyPolicyRoute(),
+        SubscriptionCheckRoute.routeName: (context) => SubscriptionCheckRoute()
       }
     );
   }

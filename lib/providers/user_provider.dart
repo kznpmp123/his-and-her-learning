@@ -48,9 +48,14 @@ class UserProvider extends ChangeNotifier{
         user = null;
       }
 
+      print('UserProvider->login success');
+      return user;
+
     }catch(exp){
       print('UserProvider->login exp');
       user = null;
+      refreshKey = null;
+      accessKey = null;
       print(exp);
       return user;
     }
