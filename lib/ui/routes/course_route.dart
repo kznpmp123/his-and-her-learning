@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:kzn/providers/course_provider.dart';
+import 'package:kzn/ui/components/single/lesson_card.dart';
+import 'package:kzn/ui/components/single/lesson_video_player.dart';
+import 'package:provider/provider.dart';
 
 class CourseRoute extends StatefulWidget {
   static const routeName = '/course_route';
@@ -15,13 +19,14 @@ class _CourseRouteState extends State<CourseRoute> {
       ),
       body: Column(
         children: [
-          Placeholder(fallbackHeight: 300,),
+          LessonVideoPlayer(),
+          //Placeholder(fallbackHeight: 300,),
           Expanded(
               child: ListView.separated(
                   physics: BouncingScrollPhysics(),
-                  itemBuilder: (context, index) => Container(height: 100, child: Text('Hello $index'),),
+                  itemBuilder: (context, index) => LessonCard(lesson: Provider.of<CourseProvider>(context,listen: true).course.lessonSet[index],),
                   separatorBuilder: (context, index) => Divider(),
-                  itemCount: 50
+                  itemCount: Provider.of<CourseProvider>(context,listen: true).course.lessonSet.length
               )
           )
         ],

@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       //home: MyHomePage(title: 'Flutter Demo Home Page'),
-      initialRoute: LoginRoute.routeName,
+      initialRoute: MainRoute.routeName,
       routes: {
         MainRoute.routeName: (context) => MainRoute(),
         LoginRoute.routeName: (context) => LoginRoute(),

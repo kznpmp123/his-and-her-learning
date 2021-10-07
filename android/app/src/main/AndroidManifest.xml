@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mmsoftware100.kzn">
    <application
-        android:label="kzn"
+        android:label="KZN' PM"
         android:icon="@mipmap/ic_launcher"
        android:usesCleartextTraffic="true">
         <activity

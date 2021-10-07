@@ -17,29 +17,30 @@ class SubscriptionCheckRoute extends StatefulWidget {
 }
 
 class _SubscriptionCheckRouteState extends State<SubscriptionCheckRoute> {
-  bool _loading = false;
 
   void _check()async{
     // check login
     String accessKey = Provider.of<UserProvider>(context, listen:false).accessKey;
     if(accessKey == null) {
-
       // need to login first
       Future.delayed(Duration.zero, () {
         Navigator.pushReplacementNamed(context, LoginRoute.routeName);
         return;
       });
     }
-    // check subscription
-    Course course = Provider.of<CourseProvider>(context, listen:false).course;
-    bool status = await Provider.of<SubscriptionProvider>(context, listen:false).checkSubscription(course.id,accessKey);
-
-    if(status == true){
-      Navigator.pushReplacementNamed(context, CourseRoute.routeName);
-    }
     else{
-      Navigator.pushReplacementNamed(context, SubscriptionRoute.routeName);
+      // check subscription
+      Course course = Provider.of<CourseProvider>(context, listen:false).course;
+      bool status = await Provider.of<SubscriptionProvider>(context, listen:false).checkSubscription(course.id,accessKey);
+
+      if(status == true){
+        Navigator.pushReplacementNamed(context, CourseRoute.routeName);
+      }
+      else{
+        Navigator.pushReplacementNamed(context, SubscriptionRoute.routeName);
+      }
     }
+
 
   }
   @override

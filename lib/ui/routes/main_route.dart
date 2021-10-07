@@ -6,6 +6,7 @@ import 'package:kzn/providers/user_provider.dart';
 import 'package:kzn/ui/components/combine/app_drawer.dart';
 import 'package:kzn/ui/components/combine/app_fab.dart';
 import 'package:kzn/ui/components/combine/course_list.dart';
+import 'package:kzn/ui/components/combine/intro_slider.dart';
 import 'package:kzn/ui/components/single/course_thumb.dart';
 
 import 'package:kzn/ui/routes/tnc_route.dart';
@@ -35,7 +36,12 @@ class _MainRouteState extends State<MainRoute> {
       appBar: AppBar(
         title: Text("KZN "),
       ),
-      body: _courseListFutureBuilder(),
+      body: Column(
+        children: [
+          IntroSlider(photos: introSliderImages,),
+          Expanded(child: _courseListFutureBuilder()),
+        ],
+      ),
       drawer: AppDrawer(),
       floatingActionButton: AppFab(),
     );

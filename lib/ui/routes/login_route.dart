@@ -106,8 +106,8 @@ class _LoginRouteState extends State<LoginRoute> with SingleTickerProviderStateM
                         disabledBorder: OutlineInputBorder(
                           //borderSide: const BorderSide(color: Colors.red)
                         ),
-                        hintText: 'Enter your email',
-                        labelText: 'Email',
+                        hintText: 'Enter username',
+                        labelText: 'Username',
                         //hintStyle: TextStyle(color: Colors.white),
                         //labelStyle: TextStyle(color: Colors.white),
                         //fillColor: Colors.white

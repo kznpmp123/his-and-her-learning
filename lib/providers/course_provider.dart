@@ -4,12 +4,14 @@ import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:kzn/data/constant.dart';
 import 'package:kzn/data/models/course.dart';
+import 'package:kzn/data/models/lesson.dart';
 import 'package:kzn/data/models/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CourseProvider extends ChangeNotifier{
 
   Course course;
+  Future<Lesson> lesson;
 
   List<Course> courseListNormal;
   Future<List<Course>> courseList;
@@ -81,6 +83,18 @@ class CourseProvider extends ChangeNotifier{
   void setCourseDetail(Course detailCourse){
     print("CourseProvider->setCourseDetail");
     course = detailCourse;
+    try{
+      setLessonDetail(course.lessonSet?.first ?? Lesson());
+    }
+    catch(exp){
+      print("no element");
+    }
+    notifyListeners();
+  }
+
+  void setLessonDetail(Lesson detailLesson){
+    print("CourseProvider->setLessonDetail");
+    lesson = Future.delayed(Duration.zero,()=>detailLesson);
     notifyListeners();
   }
 
