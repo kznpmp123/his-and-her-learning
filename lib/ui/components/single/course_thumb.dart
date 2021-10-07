@@ -32,15 +32,17 @@ class CourseThumb extends StatelessWidget {
           alignment: Alignment.center,
           children: [
             CourseThumbImg(course: course,),
-            Center(
-                child: Container(
-                  color: Color.fromRGBO(38, 38, 38, 0.4),
-                  padding: EdgeInsets.all(8.0),
-                  margin: EdgeInsets.all(8.0),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                width: double.infinity,
+                color: Color.fromRGBO(38, 38, 38, 0.4),
+                padding: EdgeInsets.all(8.0),
+                margin: EdgeInsets.all(0.0),
 
-                  child: Text(course.name,
-                    style: TextStyle(color: Colors.white, fontSize: 24),),
-                )
+                child: Text(course.name,
+                  style: TextStyle(color: Colors.white, fontSize: 24),),
+              ),
             ),
           ],
         ),

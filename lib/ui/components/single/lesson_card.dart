@@ -30,10 +30,8 @@ class LessonCard extends StatelessWidget {
             ],
           ),
         ),
-        height: 100,
-        child: Center(
-          child: Text(lesson.name, style: TextStyle(color: Colors.black),),
-        ),
+        //height: 50,
+        child: Text(lesson.name, style: TextStyle(color: Colors.black),),
       ),
     );
   }

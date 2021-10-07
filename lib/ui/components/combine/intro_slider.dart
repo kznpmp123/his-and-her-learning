@@ -15,13 +15,13 @@ class IntroSlider extends StatelessWidget {
     return (photos.length == 0 ) ?
     Container(color: Colors.grey,) :
     Container(
-      height: 250,
+      height: 28.125 * 7,
       //color: Colors.blueAccent,
       child: CarouselSlider(
           options: CarouselOptions(
             autoPlay: true,
             initialPage: 2,
-            height: 250,
+            height: 28.125 * 9,
             enableInfiniteScroll: true,
           ),
           items: List.generate(photos.length, (index) => Padding(

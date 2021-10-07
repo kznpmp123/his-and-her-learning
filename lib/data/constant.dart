@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-final String appName = "KZN' PM";
+final String appName = "KZN Learning";
 // production server http://13.213.196.157:8000 2021-10-08 Updated
 // development server http://192.168.1.2:8000
 final String backendApiServer = 'http://13.213.196.157:8000';

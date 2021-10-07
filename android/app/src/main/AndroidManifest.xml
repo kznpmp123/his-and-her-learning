@@ -1,9 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mmsoftware100.kzn">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="KZN' PM"
+        android:label="KZN Learning"
         android:icon="@mipmap/ic_launcher"
-       android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

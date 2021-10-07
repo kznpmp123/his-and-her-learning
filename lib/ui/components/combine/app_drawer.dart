@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kzn/data/constant.dart';
+import 'package:kzn/ui/components/single/user_info.dart';
 import 'package:kzn/ui/routes/about_route.dart';
 import 'package:kzn/ui/routes/privacy-policy.dart';
 import 'package:kzn/ui/routes/tnc_route.dart';
@@ -19,7 +20,14 @@ class AppDrawer extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.blue,
             ),
-            child: Center(child: Text(appName,style: TextStyle(color: Colors.white,fontSize: 36),)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(appName,style: TextStyle(color: Colors.white,fontSize: 36),),
+                UserInfo()
+              ],
+            ),
           ),
           Container(
             margin: EdgeInsets.all(8),
