@@ -5,8 +5,8 @@ final String appName = "KZN Learning";
 // production server http://13.213.196.157:8000 2021-10-08 Updated
 // development server http://192.168.1.2:8000
 // http://127.0.0.1:8000/
-//final String backendApiServer = 'http://13.213.196.157:8000';
-final String backendApiServer = 'http://127.0.0.1:8000';
+final String backendApiServer = 'http://52.47.195.138:8080';
+//final String backendApiServer = 'http://127.0.0.1:8000';
 final String apiVersion = backendApiServer+'';
 final String loginEndpoint = apiVersion+'/api/token/';
 final String courseEndpoint = apiVersion+'/courses/';
