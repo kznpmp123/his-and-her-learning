@@ -1,7 +1,5 @@
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-
 import 'intro_slider_item.dart';
 
 class IntroSlider extends StatelessWidget {
@@ -21,7 +19,7 @@ class IntroSlider extends StatelessWidget {
           options: CarouselOptions(
             autoPlay: true,
             initialPage: 2,
-            height: 28.125 * 9,
+            height: 28.125 * 6.5,
             enableInfiniteScroll: true,
           ),
           items: List.generate(photos.length, (index) => Padding(

@@ -1,12 +1,9 @@
 import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:kzn/data/constant.dart';
 import 'package:kzn/data/models/course.dart';
 import 'package:kzn/data/models/lesson.dart';
-import 'package:kzn/data/models/user.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class CourseProvider extends ChangeNotifier{
 

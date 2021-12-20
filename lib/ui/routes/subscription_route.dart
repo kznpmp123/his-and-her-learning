@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kzn/ui/components/combine/app_fab.dart';
 
 class SubscriptionRoute extends StatefulWidget {
   static const routeName = '/subscription_route';
@@ -17,7 +16,7 @@ class _SubscriptionRouteState extends State<SubscriptionRoute> {
       body: Center(
         child: Text("To see this course, please subscribe."),
       ),
-      floatingActionButton: AppFab(),
+      // floatingActionButton: AppFab(),
     );
   }
 }

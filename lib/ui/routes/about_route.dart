@@ -12,26 +12,32 @@ class _AboutRouteState extends State<AboutRoute> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("About")),
-      body: SingleChildScrollView(child: Text(
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Colors.white,
+        title: Text("About", style: TextStyle(fontWeight: FontWeight.w700,
+            fontSize: 14.0,
+            color: Colors.black
+        )),),
+      // appBar: AppBar(title: Text("About")),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 20, left: 8, right: 8),
+        child: SingleChildScrollView(child: Text(
+            '''
+          His's and Her's Fashion Design School was founded as Fashion Illustration school on April, 2018. 
+          
+Approved as the Fashion Design School in Myanmar in 2018, the School has produced about 500 alumni, and has played a significant role in fashion education in Myanmar for about 3 years.
+
+His's and Her's Fashion Design School is situated in Yangon, Myanmar. 
+
+The School is a gathering place for Fashion industry, providing access to information on the latest fashion trends around the world.
+
+His's and Her's Fashion Design School has produced many great Fashion designers and Illustrators working on the world stage. 
+
+We have helped raise Myanmar fashion to the world’s top level, and continue to send out talent to the forefront of the fashion world.
           '''
-        Our Stuff
-The Services are protected by copyright, trademark, and other US and foreign laws. These Terms don’t grant you any right, title, or interest in the Services, others’ content in the Services, Dropbox trademarks, logos and other brand features. We welcome feedback, but note that we may use comments or suggestions without any obligation to you.
-
-Copyright
-We respect the intellectual property of others and ask that you do too. We respond to notices of alleged copyright infringement if they comply with the law, and such notices should be reported using our Copyright Policy. We reserve the right to delete or disable content alleged to be infringing and terminate accounts of repeat infringers. Our designated agent for notice of alleged copyright infringement on the Services is:
-
-
-Paid Accounts
-Billing. You can increase your storage space and add paid features to your account (turning your account into a “Paid Account”). We’ll automatically bill you from the date you convert to a Paid Account and on each periodic renewal until cancellation. If you’re on an annual plan, we’ll send you a notice email reminding you that your plan is about to renew within a reasonable period of time prior to the renewal date. You’re responsible for all applicable taxes, and we’ll charge tax when required to do so. Some countries have mandatory local laws regarding your cancellation rights, and this paragraph doesn’t override these laws.
-
-Cancellation. You may cancel your Dropbox Paid Account at any time. Refunds are only issued if required by law. For example, users living in the European Union have the right to cancel their Paid Account subscriptions within 14 days of signing up for, upgrading to, or renewing a Paid Account by clicking here.
-
-Downgrades. Your Paid Account will remain in effect until it's cancelled or terminated under these Terms. If you don’t pay for your Paid Account on time, we reserve the right to suspend it or remove Paid Account features.
-
-Changes. We may change the fees in effect on renewal of your subscription, to reflect factors such as changes to our product offerings, changes to our business, or changes in economic conditions. We’ll give you no less than 30 days’ advance notice of these changes via a message to the email address associated with your account and you’ll have the opportunity to cancel your subscription before the new fee comes into effect.
-        '''
-      )),
+        )),
+      ),
 
     );
   }

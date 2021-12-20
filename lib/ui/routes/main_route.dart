@@ -2,18 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:kzn/data/constant.dart';
 import 'package:kzn/data/models/course.dart';
 import 'package:kzn/providers/course_provider.dart';
-import 'package:kzn/providers/user_provider.dart';
 import 'package:kzn/ui/components/combine/app_drawer.dart';
-import 'package:kzn/ui/components/combine/app_fab.dart';
 import 'package:kzn/ui/components/combine/course_list.dart';
 import 'package:kzn/ui/components/combine/intro_slider.dart';
-import 'package:kzn/ui/components/single/course_thumb.dart';
-
-import 'package:kzn/ui/routes/tnc_route.dart';
 import 'package:kzn/utils/open_facebook.dart';
 import 'package:provider/provider.dart';
-
-import 'about_route.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MainRoute extends StatefulWidget {
   static const routeName = '/main_route';
@@ -32,18 +27,125 @@ class _MainRouteState extends State<MainRoute> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("KZN "),
+    return SafeArea(
+      child: Scaffold(
+
+        appBar: AppBar(
+                        iconTheme: IconThemeData(color: Colors.black),
+          backgroundColor: Colors.white,
+          title: Text("His's and Her's", style: TextStyle(fontSize: 16.0,
+              color: Colors.black
+          )),
+            actions: [Container(
+              margin: EdgeInsets.only(
+                top: 7,
+                bottom: 10,
+                right: 7,
+              ),
+              width: 40,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  alignment: Alignment.center,
+                  padding: MaterialStateProperty.all(EdgeInsets.all(0)),
+                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(80),
+                  )),
+                  overlayColor: MaterialStateProperty.all(Colors.black12),
+                ),
+                onPressed: (){
+                  //Navigator.pushNamed(context, OTPScreen.routeName);
+                  // print("Contact to Admin onPressed");
+                  OpenFacebook.open(fbProtocolUrl, fallbackUrl);
+                },
+
+                child: FaIcon(
+                  FontAwesomeIcons.facebook,
+                  color: Colors.indigo,
+                  size: 20,
+                ),
+              ),
+            ),
+              Container(
+                margin: EdgeInsets.only(
+                  top: 7,
+                  bottom: 10,
+                  right: 7,
+                ),
+                width: 40,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    alignment: Alignment.center,
+                    padding: MaterialStateProperty.all(EdgeInsets.all(0)),
+                    backgroundColor: MaterialStateProperty.all(Colors.white),
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(80),
+                    )),
+                    overlayColor: MaterialStateProperty.all(Colors.black12),
+                  ),
+                  onPressed: () async {
+                    try {
+                      await launch('https://m.me/hisandhermyanmar');
+                    } catch (e) {
+                      print(e);
+                    }
+                  },
+                  child: FaIcon(
+                    FontAwesomeIcons.facebookMessenger,
+                    color: Colors.indigo,
+                    size: 20,
+                  ),
+                ),
+              ),
+
+            //   Container(
+            //     margin: EdgeInsets.only(
+            //       top: 7,
+            //       bottom: 10,
+            //       right: 7,
+            //     ),
+            //     width: 40,
+            //     child: ElevatedButton(
+            //       style: ButtonStyle(
+            //         alignment: Alignment.center,
+            //         padding: MaterialStateProperty.all(EdgeInsets.all(0)),
+            //         backgroundColor: MaterialStateProperty.all(Colors.white),
+            //         shape: MaterialStateProperty.all(RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(80),
+            //         )),
+            //         overlayColor: MaterialStateProperty.all(Colors.black12),
+            //       ),
+            //       onPressed: () async {
+            //         {Navigator.push(
+            //           context,
+            //           MaterialPageRoute(
+            //               builder: (context) => Blog()),
+            //         );
+            //         }
+            //       },
+            //       child: FaIcon(
+            //         FontAwesomeIcons.bloggerB,
+            //         color: Colors.indigo,
+            //         size: 20,
+            //       ),
+            //     ),
+            //   ),
+            //
+            ]
+        ),
+
+
+        body: ListView(
+          children: [
+            IntroSlider(photos: introSliderImages,),
+            _courseListFutureBuilder(),
+          ],
+        ),
+
+
+        drawer: AppDrawer(),
+        // floatingActionButton: AppFab(),
       ),
-      body: Column(
-        children: [
-          IntroSlider(photos: introSliderImages,),
-          Expanded(child: _courseListFutureBuilder()),
-        ],
-      ),
-      drawer: AppDrawer(),
-      floatingActionButton: AppFab(),
     );
   }
 
@@ -74,5 +176,9 @@ class _MainRouteState extends State<MainRoute> {
           }
         }
     );
+
+
   }
+
+
 }

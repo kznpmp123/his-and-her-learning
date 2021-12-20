@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kzn/bottom_nav/bottombar.dart';
 import 'package:kzn/providers/course_provider.dart';
 import 'package:kzn/providers/subscription_provider.dart';
 import 'package:kzn/providers/user_provider.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: "His's & Her's",
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -47,7 +48,7 @@ class MyApp extends StatelessWidget {
       //home: MyHomePage(title: 'Flutter Demo Home Page'),
       initialRoute: MainRoute.routeName,
       routes: {
-        MainRoute.routeName: (context) => MainRoute(),
+        MainRoute.routeName: (context) => BottomBar(),
         LoginRoute.routeName: (context) => LoginRoute(),
         SubscriptionRoute.routeName: (context) => SubscriptionRoute(),
         CourseRoute.routeName: (context) => CourseRoute(),

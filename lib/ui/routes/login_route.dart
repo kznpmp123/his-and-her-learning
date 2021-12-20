@@ -50,28 +50,29 @@ class _LoginRouteState extends State<LoginRoute> with SingleTickerProviderStateM
                     alignment: Alignment.topRight,
                     child: CustomPaint(
                       size: Size(size.width / 2, size.height / 4),
-                      painter: CustomCardShapePainter(
-                          startColor: Colors.yellow,
-                          endColor: Colors.limeAccent),
+                      // painter: CustomCardShapePainter(
+                      //     startColor: Colors.black,
+                      //     endColor: Colors.black),
                     ),
                   ),
                   // app title logo
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Container(
-                      width: size.width * 0.2,
-                      child: AppLogoWidget(),
-                    ),
-                  ),
+                  // Align(
+                  //   alignment: Alignment.topRight,
+                  //   child: Container(
+                  //     width: size.width * 0.2,
+                  //     child: AppLogoWidget(),
+                  //   ),
+                  // ),
                   Align(
                     alignment: Alignment.center,
                     child: Container(
                       //color: Colors.green,
-                      margin: EdgeInsets.fromLTRB(0, 50, 0, 0),
+                      margin: EdgeInsets.fromLTRB(0, 100, 0, 0),
                       width: size.width / 1.5,
                       child: Image(
-                        image: AssetImage('assets/images/app_icon.png'),
+                        image: AssetImage('assets/images/appicon.png'),
                         fit: BoxFit.fitHeight,
+
                       ),
                     ),
                   ),
@@ -177,16 +178,16 @@ class _LoginRouteState extends State<LoginRoute> with SingleTickerProviderStateM
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
                               colors: [
-                                Colors.yellow,
-                                Colors.limeAccent
+                                Colors.black,
+                                Colors.black
                               ]
                           ),
-                          border: Border.all(color: Colors.green),
+                          border: Border.all(color: Colors.black),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: MaterialButton(
                           child: Text('Login',
-                            style: TextStyle(color: Colors.black),
+                            style: TextStyle(color: Colors.white),
                           ),
 
                         ),

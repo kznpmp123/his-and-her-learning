@@ -13,23 +13,29 @@ class CourseRoute extends StatefulWidget {
 class _CourseRouteState extends State<CourseRoute> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Course"),
-      ),
-      body: Column(
-        children: [
-          LessonVideoPlayer(),
-          //Placeholder(fallbackHeight: 300,),
-          Expanded(
-              child: ListView.separated(
-                  physics: BouncingScrollPhysics(),
-                  itemBuilder: (context, index) => LessonCard(lesson: Provider.of<CourseProvider>(context,listen: true).course.lessonSet[index],),
-                  separatorBuilder: (context, index) => Divider(),
-                  itemCount: Provider.of<CourseProvider>(context,listen: true).course.lessonSet.length
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          iconTheme: IconThemeData(color: Colors.black),
+          backgroundColor: Colors.white,
+          title: Text(Provider.of<CourseProvider>(context,listen:true).course.name, style: TextStyle(fontSize: 14.0,
+                color: Colors.black
+            ),
+          ),),
+        body: Column(
+            children: [
+              LessonVideoPlayer(),
+              //Placeholder(fallbackHeight: 300,),
+              Expanded(
+                  child: ListView.separated(
+                      physics: BouncingScrollPhysics(),
+                      itemBuilder: (context, index) => LessonCard(lesson: Provider.of<CourseProvider>(context,listen: true).course.lessonSet[index],),
+                      separatorBuilder: (context, index) => Divider(),
+                      itemCount: Provider.of<CourseProvider>(context,listen: true).course.lessonSet.length
+                  )
               )
-          )
-        ],
+            ],
+          ),
       ),
     );
   }
