@@ -2,7 +2,7 @@
     package="com.kzn.hisandherlearning">
     <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="His and Her"
+        android:label="His's and Her's"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true">
         <activity

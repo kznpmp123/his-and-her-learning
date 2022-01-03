@@ -1,10 +1,9 @@
-import 'package:kzn/bottom_nav/blog.dart';
 import 'package:kzn/bottom_nav/gallery.dart';
 import 'package:flutter/material.dart';
 import 'package:kzn/bottom_nav/vlogs.dart';
 import 'package:kzn/ui/routes/main_route.dart';
+import 'blog_tab_bar.dart';
 import 'notification.dart';
-
 import 'package:flutter/cupertino.dart';
 
 
@@ -19,7 +18,7 @@ class _BottomBarState extends State<BottomBar> {
   int _currentindex = 0;
 
   List<Widget> _widgetOption= <Widget>[
-    Blog(),
+    BlogTab(),
     Vlogs(),
     MainRoute(),
     Gallery(),
@@ -34,11 +33,10 @@ class _BottomBarState extends State<BottomBar> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.article), label: 'Blog'),
-
           BottomNavigationBarItem(icon: Icon(Icons.video_label_rounded), label: 'Vlog'),
           BottomNavigationBarItem(icon: Icon(Icons.school), label: 'Courses'),
-          BottomNavigationBarItem(icon: Icon(Icons.image), label: 'Gallery'),
-          BottomNavigationBarItem(label: 'Notification',
+          BottomNavigationBarItem(icon: Icon(Icons.image), label: 'Album'),
+          BottomNavigationBarItem(label: 'New Classes',
           icon: Stack(children: <Widget>[
           Icon(Icons.doorbell),
             new Positioned(
